@@ -8,7 +8,6 @@ export default function App() {
   async function GetDolar(){
     const response = await Api.get('/last/USD-BRL');
     setDolar(response.data);
-    // console.log(response.data);
   }
   return (
     <View style={styles.container}>

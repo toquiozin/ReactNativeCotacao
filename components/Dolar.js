@@ -1,7 +1,6 @@
 import { StyleSheet, Text } from 'react-native';
 
 export default function Dolar(props) {
-  console.log(props.data);
 	return (
 	  <>
 	  <Text style={styles.cabecalho}>Dados da Cotação Atual do Dolar!</Text>
