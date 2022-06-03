@@ -17,11 +17,13 @@ export default function Dolar(props) {
 
 const styles = StyleSheet.create({
     cabecalho:{
+	fontFamily: 'AlegreyaSansSC_400Regular',
     color:'#fff',
     fontSize:20,
     marginTop:10,
     },
 	texto:{
+	fontFamily: 'AlegreyaSansSc_300Light',
 		color:'#fff',
 		fontSize:20,
 	  	textAlign:'center',

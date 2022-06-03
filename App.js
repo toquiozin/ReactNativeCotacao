@@ -2,8 +2,25 @@ import React, {useState} from 'react';
 import { StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import Dolar from './components/Dolar';
 import Api from './components/Api';
+import {
+  useFonts,
+  AlegreyaSansSC_300Light,
+  AlegreyaSansSC_100Thin,
+  AlegreyaSansSC_400Regular,
+} from '@expo-google-fonts/alegreya-sans-sc';
+import AppLoading from 'expo-app-loading';
+
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    AlegreyaSansSC_300Light,
+    AlegreyaSansSC_100Thin,
+    AlegreyaSansSC_400Regular,
+  });
+  if(!fontsLoaded){ 
+    <AppLoading />
+  }
+
   const [dolar, setDolar] = useState(0);
   async function GetDolar(){
     const response = await Api.get('/last/USD-BRL');
@@ -31,6 +48,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   textheader:{
+    fontFamily: 'AlegreyaSansSC_100Thin',
     color:'#fff',
     fontSize:38,
     marginBottom: '1%'
@@ -42,6 +60,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   btnText:{
+    fontFamily: 'AlegreyaSansSC_300Light',
     fontSize: 30,
     color: '#000',
   }
